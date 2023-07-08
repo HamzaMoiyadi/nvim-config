@@ -16,6 +16,7 @@ return {
 
     -- Installs the debug adapters for you
     'williamboman/mason.nvim',
+    'mfussenegger/nvim-dap',
     'jay-babu/mason-nvim-dap.nvim',
 
     -- Add your own debuggers here
