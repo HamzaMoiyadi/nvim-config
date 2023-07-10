@@ -221,7 +221,7 @@ vim.o.mouse = 'a'
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.o.clipboard = 'unnamedplus'
+vim.o.clipboard = 'unnamed'
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -282,9 +282,6 @@ require('telescope').setup {
   pickers = {
     find_files = {
       find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
-      layout_config = {
-        height = 0.70
-      }
     },
     buffers = {
       show_all_buffers = true
@@ -293,7 +290,6 @@ require('telescope').setup {
       vimgrep_arguments = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column',
         '--smart-case', '-u' },
       previewer = true,
-      theme = "dropdown"
     },
     git_status = {
       git_icons = {
@@ -305,8 +301,8 @@ require('telescope').setup {
         unmerged = " ",
         untracked = " ",
       },
-      previewer = false,
-      theme = "dropdown"
+      previewer = true,
+      theme = 'ivy',
     }
   },
 }
