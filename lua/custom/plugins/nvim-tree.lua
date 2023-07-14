@@ -7,9 +7,9 @@ return {
   },
   config = function()
     require("nvim-tree").setup {
-      actions = {
-        open_file = { quit_on_open = true },
-      },
+      -- actions = {
+      -- open_file = { quit_on_open = true },
+      -- },
       sort_by = "filetype",
       view = {
         side = "right",
@@ -22,8 +22,11 @@ return {
         group_empty = true,
       },
       filters = {
-        dotfiles = true,
+        dotfiles = false,
       },
+      git = {
+        ignore = false,
+      }
     }
   end,
 }
