@@ -10,8 +10,11 @@ return {
       -- actions = {
       -- open_file = { quit_on_open = true },
       -- },
+
       sort_by = "filetype",
       view = {
+        number = true,
+        relativenumber = true,
         side = "right",
         width = 30,
       },
@@ -20,6 +23,18 @@ return {
       },
       renderer = {
         group_empty = true,
+        highlight_git = true,
+        indent_markers = {
+          enable = true,
+          inline_arrows = true,
+          icons = {
+            corner = "└",
+            edge = "│",
+            item = "│",
+            bottom = "─",
+            none = " ",
+          },
+        },
       },
       filters = {
         dotfiles = false,
