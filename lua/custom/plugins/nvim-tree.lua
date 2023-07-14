@@ -12,6 +12,9 @@ return {
         side = "right",
         width = 30,
       },
+      update_focused_file = {
+        enable = true,
+      },
       renderer = {
         group_empty = true,
       },
