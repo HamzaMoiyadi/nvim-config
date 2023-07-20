@@ -26,7 +26,7 @@ return {
           },
           live_grep = {
             vimgrep_arguments = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column',
-              '--smart-case', '-u' },
+              '--smart-case' },
             previewer = true,
           },
           git_status = {
