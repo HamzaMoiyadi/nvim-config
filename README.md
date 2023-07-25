@@ -1,6 +1,5 @@
 # kickstart.nvim
 
-https://github.com/kdheepak/kickstart.nvim/assets/1813121/f3ff9a2b-c31f-44df-a4fa-8a0d7b17cf7b
 
 ### Introduction
 
@@ -88,30 +87,6 @@ return {
 
 This will automatically install [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs) and enable it on startup. For more information, see documentation for [lazy.nvim](https://github.com/folke/lazy.nvim).
 
-#### Example: Adding a file tree plugin
-
-In the file: `lua/custom/plugins/filetree.lua`, add:
-
-```lua
--- Unless you are still migrating, remove the deprecated commands from v1.x
-vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
-
-return {
-  "nvim-neo-tree/neo-tree.nvim",
-  version = "*",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-    "MunifTanjim/nui.nvim",
-  },
-  config = function ()
-    require('neo-tree').setup {}
-  end,
-}
-```
-
-This will install the tree plugin and add the command `:Neotree` for you. You can explore the documentation at [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) for more information.
-
 ### Contribution
 
 Pull-requests are welcome. The goal of this repo is not to create a Neovim configuration framework, but to offer a starting template that shows, by example, available features in Neovim. Some things that will not be included:
@@ -121,17 +96,6 @@ Pull-requests are welcome. The goal of this repo is not to create a Neovim confi
 
 Each PR, especially those which increase the line count, should have a description as to why the PR is necessary.
 
-### FAQ
-
-* What should I do if I already have a pre-existing neovim configuration?
-  * You should back it up, then delete all files associated with it.
-  * This includes your existing init.lua and the neovim files in `~/.local` which can be deleted with `rm -rf ~/.local/share/nvim/`
-  * You may also want to look at the [migration guide for lazy.nvim](https://github.com/folke/lazy.nvim#-migration-guide)
-* What if I want to "uninstall" this configuration:
-  * See [lazy.nvim uninstall](https://github.com/folke/lazy.nvim#-uninstalling) information
-* Are there any cool videos about this plugin?
-  * Current iteration of kickstart (coming soon)
-  * Here is one about the previous iteration of kickstart: [video introduction to Kickstart.nvim](https://youtu.be/stqUbv-5u2s). Note the install via init.lua no longer works as specified. Please follow the install instructions in this file instead as they're up to date.
 
 ### Windows Installation
 
