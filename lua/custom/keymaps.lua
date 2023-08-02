@@ -19,4 +19,4 @@ vim.keymap.set('n', '<C-j>', "<cmd> TmuxNavigateDown<CR>", { desc = "Focus on Wi
 vim.keymap.set('n', '<C-k>', "<cmd> TmuxNavigateUp<CR>", { desc = "Focus on Window Up" })
 
 -- Toggle NvimTree easily
-vim.keymap.set('n', '<C-M-E>', "<cmd> NvimTreeToggle<CR>", { desc = "Toggle [n]vimTree" })
+vim.keymap.set('n', '<leader>t', "<cmd> NvimTreeToggle<CR>", { desc = "[t]oggle NvimTree" })
