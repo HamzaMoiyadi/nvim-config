@@ -91,7 +91,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -213,7 +213,6 @@ if not vim.loop.fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
-
 -- Disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -225,14 +224,14 @@ vim.opt.termguicolors = true
 -- If there is only one window open, then don't wait for nvim-tree to be closed too
 -- for nvim to close.
 -- https://github.com/nvim-tree/nvim-tree.lua/wiki/Auto-Close#marvinth01
-vim.api.nvim_create_autocmd("QuitPre", {
+vim.api.nvim_create_autocmd('QuitPre', {
   callback = function()
     local tree_wins = {}
     local floating_wins = {}
     local wins = vim.api.nvim_list_wins()
     for _, w in ipairs(wins) do
       local bufname = vim.api.nvim_buf_get_name(vim.api.nvim_win_get_buf(w))
-      if bufname:match("NvimTree_") ~= nil then
+      if bufname:match 'NvimTree_' ~= nil then
         table.insert(tree_wins, w)
       end
       if vim.api.nvim_win_get_config(w).relative ~= '' then
@@ -245,7 +244,7 @@ vim.api.nvim_create_autocmd("QuitPre", {
         vim.api.nvim_win_close(w, true)
       end
     end
-  end
+  end,
 })
 
 -- NOTE: Here is where you install your plugins.
@@ -294,12 +293,12 @@ require('lazy').setup({
     },
   },
 
-	{
+  {
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
-    main = "ibl",
+    main = 'ibl',
     opts = {
       indent = {
         char = { '┊' },
@@ -896,10 +895,10 @@ require('lazy').setup({
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
   { import = 'custom.plugins' },
-	-- The import below adds themes to neovim
+  -- The import below adds themes to neovim
   {
     import = 'themes',
-  }
+  },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
